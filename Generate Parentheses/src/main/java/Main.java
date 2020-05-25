@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.Set;
 
 public class Main {
-    public static Set<String> result=new HashSet<String>();
+
     public static List<String> generateParenthesis(int n) {
+        Set<String> result=new HashSet<String>();
         char[] cs=new char[2*n];
-        generateAll('(',0,cs);
-        generateAll(')',0,cs);
+        generateAll('(',0,cs,result);
+        generateAll(')',0,cs,result);
         return new ArrayList<String>(result);
     }
-    public static void generateAll(char c,int length,char[] last){
+    public static void generateAll(char c,int length,char[] last,Set result){
         if(last.length==length){
             if(valid(last)){
                 result.add(new String(last));
@@ -20,13 +21,13 @@ public class Main {
         }
         last[length]=c;
         length++;
-        generateAll('(',length,last);
-        generateAll(')',length,last);
+        generateAll('(',length,last,result);
+        generateAll(')',length,last,result);
 
     }
     public static void main(String[] args) {
         long begin=System.currentTimeMillis();
-        System.out.println(generateParenthesis(10));
+        System.out.println(generateParenthesis(3));
         System.out.println(System.currentTimeMillis()-begin);
     }
 
