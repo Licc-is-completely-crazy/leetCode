@@ -11,14 +11,14 @@ public class Solution {
 //        return getNext(stack);
 
         //2
-//        ListNode pre=null;
-//        while (head!=null){
-//            ListNode next=head.next;
-//            head.next=pre;
-//            pre=head;
-//            head=next;
-//        }
-//        return pre;
+        ListNode pre=null;
+        while (head!=null){
+            ListNode next=head.next;
+            head.next=pre;
+            pre=head;
+            head=next;
+        }
+        return pre;
 
         //3不难受吗
 //        public ListNode reverseList(ListNode head){
