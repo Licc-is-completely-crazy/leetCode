@@ -1,7 +1,11 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
+
 
 public class Solution {
+    Stack stack=new Stack();
+
     public static void main(String[] args) {
         Solution solution=new Solution();
 //       List<Integer> s= Arrays.asList(1,2,3,4);
